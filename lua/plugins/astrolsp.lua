@@ -45,6 +45,19 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      yamlls = {
+        settings = {
+          yaml = {
+            schemas = {
+              -- Check the following for the latest developments:
+              -- https://github.com/neovim/nvim-lspconfig/blob/e118ce58dab72c17216292eef7df4cee3cf60885/doc/configs.md#yamlls
+              -- https://github.com/redhat-developer/yaml-language-server/issues/211
+              -- https://github.com/redhat-developer/yaml-language-server/issues/307
+              ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/refs/heads/master/v1.32.1-standalone-strict/all.json"] = "/*.k8s.yaml",
+            }
+          }
+        }
+      },
     },
     -- customize how language servers are attached
     handlers = {
