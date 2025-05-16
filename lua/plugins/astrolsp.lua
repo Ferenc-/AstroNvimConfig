@@ -89,6 +89,26 @@ return {
           end,
         },
       },
+--    -- first key is the augroup name
+--    terminal_settings = {
+--      -- condition to create/delete auto command group
+--      -- can either be a string of a client capability
+--      -- or a function of `fun(client, bufnr): boolean`
+--      cond = function(client, bufnr) return client.name ~= "marksman" end,
+--      -- the value is a list of autocommands to create
+--      {
+--        -- event is added here as a string or a list-like table of events
+--        event = "BufWritePre",
+--        -- the rest of the autocmd options (:h nvim_create_autocmd)
+--        desc = "Removing trailing whitespace, whenever Disable line number/fold column/sign column for terminals",
+--        callback = function()
+--          vim.opt_local.number = false
+--          vim.opt_local.relativenumber = false
+--          vim.opt_local.foldcolumn = "0"
+--          vim.opt_local.signcolumn = "no"
+--        end,
+--      },
+--    },
     },
     -- mappings to be set up on attaching of a language server
     mappings = {
